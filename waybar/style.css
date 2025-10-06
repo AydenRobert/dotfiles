@@ -1,0 +1,72 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+}
+
+window#waybar {
+    background-color: rgba(20, 25, 35, 0.5); /* Tango-dark bluish */
+    color: #ffffff;
+}
+
+/* Section separation via gradients */
+.modules-left {
+    background: linear-gradient(
+        90deg,
+        rgba(20, 50, 80, 0.4) 0%,
+        transparent 100%
+    );
+}
+.modules-center {
+    background: linear-gradient(
+        180deg,
+        rgba(20, 50, 80, 0.4) 0%,
+        transparent 100%
+    );
+}
+.modules-right {
+    background: linear-gradient(
+        270deg,
+        rgba(20, 50, 80, 0.4) 0%,
+        transparent 100%
+    );
+}
+
+/* Workspaces as dots */
+#workspaces button {
+    background: transparent;
+    color: #aaa;
+    padding: 0 4px;
+}
+#workspaces button.focused {
+    color: #fff;
+}
+#workspaces button.urgent {
+    color: #f53c3c;
+}
+#custom-workspace_apps {
+    padding: 0 8px;
+    min-width: 40px; /* prevents clipping if only one icon */
+}
+
+/* Module blocks */
+#pulseaudio,
+#network,
+#tray,
+#clock,
+#custom-bluetooth {
+    padding: 0 10px;
+    font-family: "Noto Color Emoji", "JetBrainsMono Nerd Font";
+}
+
+/* Colors per state */
+#network.disconnected {
+    color: #f53c3c;
+}
+#network {
+    color: #2ecc71;
+}
+#pulseaudio.muted {
+    color: #90b1b1;
+}

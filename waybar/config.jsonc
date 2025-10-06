@@ -1,0 +1,82 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+    // Sections
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/workspace_apps"
+    ],
+    "modules-center": [
+        "mpris"
+    ],
+    "modules-right": [
+        "clock",
+        "pulseaudio",
+        "custom/bluetooth",
+        "network",
+        "tray"
+    ],
+    // Workspaces (dots only)
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "active": "",
+            "urgent": ""
+        }
+    },
+    // Workspace apps (script-based)
+    "custom/workspace_apps": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/workspace_apps.sh",
+        "return-type": "json",
+        "interval": 2
+    },
+    "mpris": {
+        "format": "{status_icon} {title} - {artist}",
+        "status-icons": {
+            "playing": "⏸",
+            "paused": "▶",
+            "stopped": "⏹"
+        },
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous"
+    },
+    "clock": {
+        "format": "{:%a, %d. %b  %H:%M}"
+    },
+    // Audio
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "muted": "",
+            "low": "",
+            "medium": "",
+            "high": ""
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol"
+    },
+    // Network
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{essid}"
+    },
+    // Bluetooth
+    "custom/bluetooth": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/bt_status.sh",
+        "return-type": "json",
+        "interval": 5
+    },
+    // Tray
+    "tray": {
+        "icon-size": 20,
+        "spacing": 8
+    }
+}

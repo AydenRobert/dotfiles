@@ -1,0 +1,142 @@
+# ~/.config/starship.toml
+# Configured with the specific hex colors from the iTerm2 Tango Dark theme.
+
+format = """
+[](#75507B)\
+$os\
+$username\
+[](bg:#CC0000 fg:#75507B)\
+$directory\
+[](fg:#CC0000 bg:#C4A000)\
+$git_branch\
+$git_status\
+[](fg:#C4A000 bg:#3465A4)\
+$c\
+$cpp\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+$scala\
+[](fg:#3465A4 bg:#06989A)\
+$docker_context\
+[](fg:#06989A bg:#555753)\
+$time\
+[ ](fg:#555753)\
+"""
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+[username]
+show_always = true
+style_user = "bg:#75507B fg:#FFFFFF"
+style_root = "bg:#75507B fg:#FFFFFF"
+format = '[$user ]($style)'
+disabled = false
+
+[os]
+style = "bg:#75507B fg:#FFFFFF"
+disabled = true # Disabled by default
+
+[directory]
+style = "bg:#CC0000 fg:#FFFFFF"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[c]
+symbol = " "
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[cpp]
+symbol = " "
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:#06989A fg:#000000"
+format = '[ $symbol $context ]($style)'
+
+[elixir]
+symbol = " "
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[elm]
+symbol = " "
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:#C4A000 fg:#000000"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#C4A000 fg:#000000"
+format = '[$all_status$ahead_behind ]($style)'
+
+[golang]
+symbol = " "
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[gradle]
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[haskell]
+symbol = " "
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = " "
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[julia]
+symbol = " "
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[nim]
+symbol = "󰆥 "
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[scala]
+symbol = " "
+style = "bg:#3465A4 fg:#FFFFFF"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#555753 fg:#FFFFFF"
+format = '[ ♥ $time ]($style)'
